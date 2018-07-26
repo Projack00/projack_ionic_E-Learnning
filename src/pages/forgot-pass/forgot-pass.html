@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>รีเซ็ทรหัสผ่าน</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="section3">
+  <ion-list>
+    <ion-item>
+      <div class="spacer" style="width:268px;height:50px;"></div>
+      <ion-icon color="secondary" name="md-mail" item-left></ion-icon>
+      <ion-input type="text" placeholder=": อีเมล์"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon color="secondary" name="md-person" item-left></ion-icon>
+      <ion-input type="text" placeholder=": ชื่อ"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon color="secondary" name="md-person" item-left></ion-icon>
+      <ion-input type="text" placeholder=": นามสกุล"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon color="secondary" name="md-lock" item-left></ion-icon>
+      <ion-input type="text" placeholder=": รหัสบัตรประชาชน"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button round color="section1"  name="question_status" >ขอรหัสผ่านใหม่</button>
+
+  <button ion-button round color="danger" name="question_status" (click)="TabsController()">หน้าแรก </button>
+
+
+
+</ion-content>

@@ -1,0 +1,51 @@
+<!--
+  Generated template for the NewCoursePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        หลักสูตร
+      </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding  class="section">
+  <ion-searchbar (ionInput)="getSearch($event)" placeholder="ใส่ข้อความที่ต้องการค้นหา..."></ion-searchbar>
+
+  <label paddinng class="section3">
+    <article>
+      <h5 style="margin-top:15px; text-align:center;">หมวดหมู่หลักสูตร</h5>
+      <select class="section4" (change)="selectChangHandler($event)">
+        <option value="">หลักสูตรทั้งหมด</option>
+        <option *ngFor="let item of data" value="{{ item.cate_id }}">{{ item.cate_title }}</option>
+      </select>
+    </article>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col item-center col-6 col-md-4 col-xl-3 *ngFor="let i of filter_course" >
+          <ion-card class="section1" (click)="getItemCourse(i)">
+            <ion-card>
+              <img height="100%" src="assets/img/one.jpg" />
+            </ion-card>
+            <div class="container" padding>
+              <p>{{ i.course_title }}</p>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </label>
+
+
+
+
+</ion-content>

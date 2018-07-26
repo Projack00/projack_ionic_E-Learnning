@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      {{course_title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="section">
+  <ion-toolbar>
+    <ion-segment class="section">
+      <ion-segment-button>
+        ภาพรวมหลักสูตร
+      </ion-segment-button>
+      <ion-segment-button>
+        ประเมิน
+      </ion-segment-button>
+      <ion-segment-button>
+        ผลการสอบและพิมพ์ใบประกาศ
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-card>
+          <ion-col>
+            <!-- <img src="asset/imgs/" /> -->
+            <img height="100%" src="assets/img/picture.jpg" />
+
+          </ion-col>
+        </ion-card>
+      </ion-row>
+
+    </ion-grid>
+  </ion-card>
+
+
+
+  <div padding>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="kittens" color="primary">
+        รายละเอียด
+      </ion-segment-button>
+      <ion-segment-button value="puppies">
+        เนื้อหาของคอร์สนี้
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'puppies'">
+      <label>
+        <ion-grid>
+          <ion-list class="test">
+            <label>
+              <ion-row *ngFor="let p of results_course ; let i = index">
+                <ion-col>
+                  <ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': p.open, 'section': !p.open}">
+                    <ion-icon item-right name="md-arrow-dropright" *ngIf="!p.open"></ion-icon>
+                    <ion-icon item-right name="md-arrow-dropdown" *ngIf="p.open"></ion-icon>
+                    {{p.title}}
+                  </ion-item>
+                  <ion-grid *ngIf="p.open">
+
+                    <ion-row>
+                      <ion-col col-8>
+                        <ion-item>
+                          แบบทดสอบก่อนเรียน
+                        </ion-item>
+                      </ion-col>
+                      <ion-col width-25 offset-50 (click)="openPretest(p)">
+                        ทำแบบทดสอบ
+                      </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                      <ion-col col-8>
+                        ไฟล์คลิป
+                      </ion-col>
+                      <ion-col width-25 offset-50 (click)="openVDO(p)">
+                        เข้าสู่บทเรียน
+                      </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                      <ion-col col-8>
+                        แบบทดสอบหลังเรียน
+                      </ion-col>
+                      <ion-col width-25 offset-50>
+                        <p (click)="openPosttest(p)">ทำแบบทดสอบ</p>
+                      </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                      <ion-col col-8>
+                        แบบสอบถาม
+                      </ion-col>
+                      <ion-col width-25 offset-50 (click)="QuizPage(p)">
+                        ทำแบบทดสอบ
+                      </ion-col>
+                    </ion-row>
+
+                  </ion-grid>
+                </ion-col>
+              </ion-row>
+
+              <!-- <ion-row>
+                <ion-col col-75>
+                  <label>
+                    บททดสอบหลังเรียน
+                  </label>
+                </ion-col>
+                <ion-col col-auto>
+                  <button ion-button clear item-end (click)="openPosttest(p)">
+                    ทำแบบทดสอบ
+                  </button>
+                </ion-col>
+              </ion-row> -->
+
+              <!-- <ion-list>
+                  <ion-list-header>
+                    Ionic 2 Accordion Example.
+                  </ion-list-header>
+                  <ion-item padding *ngFor="let d of data" (click)="toggleDetails(d)">
+                    <ion-icon color="primary" item-right [name]="d.icon"></ion-icon>
+                    {{d.cate_title}}
+                    <div *ngIf="d.showDetails">
+                      xxxxxxxxxxxxxxxxx
+                    </div>
+                  </ion-item>
+                </ion-list> -->
+
+            </label>
+          </ion-list>
+        </ion-grid>
+      </label>
+    </ion-list>
+    <ion-list *ngSwitchCase="'kittens'">
+      <label>
+        <ion-card padding>
+          {{course_detail}}
+        </ion-card>
+      </label>
+    </ion-list>
+  </div>
+
+
+
+</ion-content>

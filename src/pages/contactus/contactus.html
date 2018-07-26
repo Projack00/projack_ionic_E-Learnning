@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-navbar color ="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      ติดต่อเรา
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content  id="page8" class="section">
+    <!-- <ion-content fullscreen overflow-scroll="true" class="container">
+        <div #map id="map"></div>
+      </ion-content> -->
+<ion-content style="width:100%;height:80%;" >
+  <div #map id="map"></div>
+</ion-content>
+  <ion-list >
+
+    <ion-item >
+        <div class="spacer" style="width:268px;height:17px;" id="menu-spacer2"></div>
+      <ion-icon color="secondary" name="md-person" item-left ></ion-icon>
+      <ion-input type="text" name="contac_by_name" placeholder=": ชื่อ" [(ngModel)]="data.contac_by_name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon color="secondary" name="md-person" item-left ></ion-icon>
+      <ion-input type="text" name="contac_by_surname" placeholder=": นามสกุล" [(ngModel)]="data.contac_by_surname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+
+      <ion-icon color="secondary" name="md-call" item-left ></ion-icon>
+      <ion-input type="text" name="contac_by_tel" placeholder=": เบอร์โทรศัพท์" [(ngModel)]="data.contac_by_tel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+
+      <ion-icon color="secondary" name="md-mail" item-left ></ion-icon>
+      <ion-input type="text" name="contac_by_email" placeholder=": อีเมล์" [(ngModel)]="data.contac_by_email"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+
+      <ion-icon color="secondary" name="md-bookmarks" item-left ></ion-icon>
+      <ion-input type="text" name="contac_subject" placeholder=": หัวข้อ" [(ngModel)]="data.contac_subject"></ion-input>
+    </ion-item>
+
+    <ion-item>
+
+      <ion-icon color="secondary" name="md-pricetags" item-left ></ion-icon>
+      <ion-select type="text" name="contac_type" placeholder="ประเภท" [(ngModel)]="data.contac_type">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="rowArear">
+      <ion-row row-auto>
+        <ion-col col-auto>
+          <span class="input-label">รายละเอียด</span>
+        </ion-col>
+      </ion-row>
+      <ion-row row-auto>
+        <ion-col>
+          <textarea ion-input class="resizedTextArearbox" type="text" name="contac_detail" [(ngModel)]="data.contac_detail"></textarea>
+        </ion-col>
+      </ion-row>
+
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label floating>contac_ans_subject</ion-label>
+      <ion-input type="text" name="contac_ans_subject" [(ngModel)]="data.contac_ans_subject"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>create_by</ion-label>ััััั
+      <ion-input type="text" name="create_by" [(ngModel)]="data.create_by"></ion-input>
+    </ion-item> -->
+
+
+<br>
+    <button ion-button block round padding (click)="submit()">ส่งข้อความ</button>
+  </ion-list>
+</ion-content>
